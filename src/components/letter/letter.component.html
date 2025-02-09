@@ -1,0 +1,14 @@
+<div class="letter-body" [class.opened]="opened">
+    <p class="letter-title borel-regular" [class.yes-clicked]="yesClicked">
+        Will You Be My Valentine?💘
+    </p>
+    <p class="yes-message miniver-regular" [class.yes-clicked]="yesClicked" [class.hidden]="!yesClicked">
+        YESSSS!
+        <br> A wise choice! 😉💖
+        <br> XOXO
+    </p>
+    <div class="button-group" [class.yes-clicked]="yesClicked">
+        <button class="yes-button borel-regular" (click)="yesClicked=true">YES</button>
+        <button #noButton class="no-button" (click)="moveNoButton()">NO</button>
+    </div>
+</div>

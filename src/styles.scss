@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'css/variables';
+@import 'css/clear';
+@import 'css/flex';
+@import 'css/sizing';
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Miniver&display=swap');
+
+body {
+    background-color: #ffd6d6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.borel-regular {
+    font-family: "Borel", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.miniver-regular {
+    font-family: "Miniver", serif;
+    font-weight: 400;
+    font-style: normal;
+}

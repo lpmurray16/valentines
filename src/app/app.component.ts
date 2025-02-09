@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { EnvelopeRedComponent } from "../components/envelope-red/envelope-red.component";
+import { LetterComponent } from "../components/letter/letter.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [EnvelopeRedComponent, LetterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

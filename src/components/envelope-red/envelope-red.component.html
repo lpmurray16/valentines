@@ -1,0 +1,8 @@
+<div class="red-envelope-body" [class.opened]="opened" (click)="startOpeningLetter()">
+    <div class="stamp-outter">
+        <img src="/assets/stamp.png" alt="">
+    </div>
+    <p class="for-you miniver-regular">For You</p>
+    <p class="for-name borel-regular">{{ name }}</p>
+    <p class="hint" *ngIf="timeExpired">(click or tap to open)</p>
+</div>
