@@ -23,6 +23,9 @@ export class EnvelopeRedComponent implements OnInit {
     this.activeRoute.queryParams.subscribe((params) => {
       console.log(params);
       this.name = params['name'];
+      if(this.name === undefined || this.name === '') {
+        this.name = 'Valentine';
+      }
     });
 
     // create a timer that after 5 seconds will set the timeExpired to true

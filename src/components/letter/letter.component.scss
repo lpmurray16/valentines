@@ -69,6 +69,12 @@
     }
 }
 
+.no-message {
+    animation: pulse 1s linear infinite;
+    color: $valentine-dark-red;
+    font-size: 2em;
+}
+
 .yes-message {
     color: $valentine-dark-red;
     font-size: 2.5em;
@@ -78,6 +84,10 @@
     opacity: 0;
     max-height: 0;
     overflow: hidden;
+    text-align: center;
+    @media (max-width: 600px) {
+        font-size: 1.5em;
+    }
 
     &.yes-clicked {
         opacity: 1;
@@ -111,8 +121,10 @@
     }
 }
 
+// Add this to your existing SCSS file
+
 .no-button {
-    position: relative; // Needed to allow movement
+    position: relative;
     background-color: $valentine-light-pink;
     color: $valentine-white;
     font-size: 1em;
@@ -126,6 +138,75 @@
         background-color: $valentine-pink;
         transform: scale(1.1);
     }
+
+    &.running {
+        position: absolute;
+        animation: runAround 6s linear infinite;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes runAround {
+    0% {
+        left: 50%;
+        top: 50%;
+    }
+    10% {
+        left: 90%;
+        top: 10%;
+    }
+    20% {
+        left: 10%;
+        top: 80%;
+    }
+    30% {
+        left: 70%;
+        top: 20%;
+    }
+    40% {
+        left: 20%;
+        top: 70%;
+    }
+    50% {
+        left: 80%;
+        top: 30%;
+    }
+    60% {
+        left: 30%;
+        top: 90%;
+    }
+    70% {
+        left: 60%;
+        top: 10%;
+    }
+    80% {
+        left: 40%;
+        top: 60%;
+    }
+    90% {
+        left: 10%;
+        top: 40%;
+    }
+    100% {
+        left: 50%;
+        top: 50%;
+    }
+}
+
+// Add these variables to control the button boundaries
+:root {
+    --button-safe-area: 20px;
 }
 
 
@@ -135,7 +216,7 @@
         padding: 1.5rem;
     }
 
-    .letter-title, .yes-message {
+    .letter-title {
         font-size: 2.5em;
     }
 
