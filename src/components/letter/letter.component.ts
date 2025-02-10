@@ -14,6 +14,7 @@ export class LetterComponent implements OnInit {
     yesClicked: boolean = false;
     isNoButtonRunning: boolean = false;
     animationService = inject(AnimationStartService);
+    name: string = '';
 
     @ViewChild('noButton', { static: false }) noButton!: ElementRef<HTMLButtonElement>;
 
@@ -23,6 +24,10 @@ export class LetterComponent implements OnInit {
         this.animationService.letterOpened.subscribe(() => {
             console.log('Letter opened');
             this.opened = true;
+        });
+        this.animationService.name.subscribe((name: string) => {
+            console.log('Name received');
+            this.name = name;
         });
     }
 

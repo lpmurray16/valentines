@@ -15,4 +15,20 @@ i {
     color: #db8282;
     right: 2%;
     cursor: pointer;
+    transition: all 0.3s ease-out infinite;
+
+    &:hover {
+        color: #e74c3c;
+        animation: rotate 1s linear infinite;
+    }
+}
+
+// create a keyframe of constant rotation
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

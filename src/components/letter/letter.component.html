@@ -5,15 +5,23 @@
     <p *ngIf="isNoButtonRunning" class="no-message miniver-regular">
         (Are you sure ?)
     </p>
-    <p class="yes-message sour-gummy" [class.yes-clicked]="yesClicked" [class.hidden]="!yesClicked">
+    <p class="yes-message sour-gummy" [class.yes-clicked]="yesClicked" *ngIf="name != 'Courtney' && name != 'Court'">
         ✨Wonderful!✨
         <br>You won't regret it!
         <br>Happy Valentine's Day!💝
         <br>😉💖
         <br>💋XOXO
     </p>
+    <p class="yes-message sour-gummy" [class.yes-clicked]="yesClicked" *ngIf="name === 'Courtney' || name === 'Court'">
+        ✨OMG REALLY!?✨
+        <br>You won't regret it, babe!
+        <br>Happy Valentine's Day!💝
+        <br>😉Love you💖
+        <br>💋XOXO - Your Husband
+    </p>
     <div class="button-group" [class.yes-clicked]="yesClicked">
-        <button class="yes-button borel-regular" (click)="yesBtnClicked()">YES</button>
+        <button class="yes-button borel-regular" (click)="yesBtnClicked()">{{ isNoButtonRunning? "I'd Love To Be 🥰":"YES" }}</button>
+        <button class="yes-button borel-regular" *ngIf="isNoButtonRunning" (click)="yesBtnClicked()">Finger slipped,<br>I meant yes.</button>
         <button #noButton class="no-button" (click)="moveNoButton()">NO</button>
     </div>
 </div>

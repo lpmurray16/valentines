@@ -26,6 +26,7 @@ export class EnvelopeRedComponent implements OnInit {
       if(this.name === undefined || this.name === '') {
         this.name = 'Valentine';
       }
+      this.animationService.name.next(this.name);
     });
 
     // create a timer that after 5 seconds will set the timeExpired to true
