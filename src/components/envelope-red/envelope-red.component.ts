@@ -39,4 +39,8 @@ export class EnvelopeRedComponent implements OnInit {
     this.opened = true;
     this.animationService.letterOpened.next();
   }
+
+  nameIsMoreThan(val: number) {
+    return this.name.length >= val;
+  }
 }

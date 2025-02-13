@@ -1,7 +1,7 @@
 :host {
     display: grid;
     place-items: center;
-    height: 100dvh;
+    height: 100%;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -13,7 +13,7 @@ i {
     top: 2%;
     font-size: 2rem;
     color: #db8282;
-    right: 2%;
+    right: 3%;
     cursor: pointer;
     transition: all 0.3s ease-out infinite;
 
